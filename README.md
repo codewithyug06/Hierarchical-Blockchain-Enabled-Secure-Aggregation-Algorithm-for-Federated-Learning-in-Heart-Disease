@@ -1,75 +1,84 @@
 ﻿# Hierarchical-Blockchain-Enabled-Secure-Aggregation-Algorithm-for-Federated-Learning-in-Heart-Disease
 
+A cutting-edge, privacy-preserving Federated Learning (FL) framework enhanced with Hierarchical Blockchain, Secure Aggregation, and a Bayesian Time-Decayed Reputation System to build a trustworthy, attack-resilient, and scalable heart-disease prediction system.
 
-A cutting-edge, privacy-preserving federated learning (FL) framework that integrates Hierarchical Blockchain, Secure Aggregation, and Bayesian Reputation Management to build a trustworthy, attack-resilient, and scalable heart-disease prediction system.
-
-This repository implements an advanced Federated Random Forest model secured by blockchain-anchored audit trails and dynamic reputation scoring, ensuring data confidentiality while maximizing predictive accuracy.
+This repository implements an advanced Federated Random Forest model secured by blockchain-anchored audit trails and dynamic reputation scoring — ensuring confidentiality, integrity, robustness, and high predictive accuracy.
 
 🚀 Project Overview
 
-Heart disease is the world’s leading cause of mortality. While machine learning can assist early diagnosis, traditional centralized approaches compromise patient privacy.
+Heart disease is one of the leading causes of death globally. Artificial Intelligence can assist clinicians in early diagnosis, but centralized ML pipelines require sensitive patient data to be moved to a central server, risking privacy, regulatory compliance, and security.
 
-This project solves this problem by:
+This project solves these challenges by introducing a secure, decentralized, blockchain-governed FL framework where:
 
-✔ Combining Federated Learning + Blockchain
-✔ Ensuring data never leaves the hospital (clients)
-✔ Validating model updates using Proof-of-Quality (PoQ)
-✔ Using a hierarchical blockchain for scalability
-✔ Applying a Bayesian time-decayed reputation system
-✔ Performing reputation-weighted secure aggregation
+✔ No patient data ever leaves the client/hospital
 
-This produces a more accurate, robust, and trustworthy global model compared to standard FL and centralized approaches.
+✔ Updates are validated through Proof-of-Quality (PoQ)
+
+✔ Client behavior is monitored using Bayesian reputation scoring
+
+✔ Only trustworthy updates are included in training
+
+✔ Blockchain ensures transparency & tamper-proof audit trails
+
+The result is a more accurate, robust, and reliable global model than centralized or traditional Federated Learning approaches.
 
 🧬 Key Features
 🔐 1. Privacy-Preserving Federated Learning
 
-Local training on hospital EHR data
+Local training on isolated hospital EHR datasets
 
-No raw patient information leaves clients
+Only model updates (not raw data) are shared
 
-FL-based Random Forest with secure update sharing
+Random Forest classifier for interpretable risk prediction
 
 🛡 2. Hierarchical Blockchain Layer
 
-Lightweight sidechains for fast transactions
+Sidechains for fast, low-latency interaction
 
-Mainchain for auditability & tamper-proof records
+Mainchain for anchoring global models & proofs
 
-Merkle-root anchoring of global updates
+Merkle-root anchoring ensures integrity of each training round
+
+Provides transparency, auditability, and tamper resistance
 
 🧾 3. Proof-of-Quality (PoQ) Validation
 
-Filters out low-quality or malicious updates
+Automatically filters poor, anomalous, or malicious model updates
 
-Ensures integrity of every training round
+Compares local validation metrics against round medians
+
+Ensures only meaningful contributions enter the global model
 
 ⭐ 4. Bayesian Reputation Mechanism
 
-Maintains client trust using:
+Tracks long-term reliability of each participating hospital:
 
 Time-decayed scoring
 
-Reliability-based update weighting
+Penalizes unreliable or inconsistent updates
 
-Only “top-K reputed” clients contribute
+Rewards accurate and stable contributions
+
+Only Top-K reputed clients participate in secure aggregation
 
 📊 5. Reputation-Weighted Secure Aggregation
 
-Prevents poisoning
+Prevents poisoning and low-quality update influence
 
-Enhances accuracy
+Weighted averaging boosts overall performance
 
-Ensures fairness & robustness
-
+Enhances fairness, robustness, and security
 
 📚 Datasets Used
 
-This project uses two benchmark cardiovascular datasets:
+This project uses two benchmark datasets widely used in cardiovascular risk prediction research.
 
 1️⃣ Framingham Heart Study Dataset
 
-✔ 4240 patient records
-✔ 16 columns / 15 clinical attributes
+✔ 4,240 patient records
+
+✔ 16 columns / 15 clinical features
+
 ✔ Predicts 10-year risk of coronary heart disease (CHD)
 
 Key features include:
@@ -78,15 +87,15 @@ Age
 
 Gender
 
-Systolic & Diastolic BP
+Systolic & Diastolic Blood Pressure
 
-Total cholesterol
+Total Cholesterol
 
-Smoking status
+Smoking Status
 
 Diabetes
 
-Heart rate
+Heart Rate
 
 Hypertension medication
 
@@ -97,18 +106,20 @@ Glucose levels
 2️⃣ UCI Heart Disease Dataset
 
 ✔ 303 patient records
-✔ 13 clinical attributes
-✔ Used for binary classification
 
-Includes:
+✔ 13 clinical features
+
+✔ Binary classification (presence of heart disease)
+
+Attributes include:
 
 Age, sex
+
+Chest pain type
 
 Cholesterol
 
 Resting ECG
-
-Chest pain type
 
 Maximum heart rate
 
@@ -117,17 +128,27 @@ Exercise-induced angina
 ST depression
 
 🧼 Data Preprocessing Pipeline
+
+To ensure data consistency across clients, each hospital performs:
+
 ✔ Missing value imputation
-✔ Label/one-hot encoding for categorical attributes
-✔ Feature scaling (normalization / standardization)
-✔ Stratified dataset splitting
-Training : Validation : Testing = 70% : 15% : 15%
 
+✔ Encoding of categorical attributes
 
-Ensures class balance & robust evaluation.
+✔ Standardization / normalization
+
+✔ Stratified train-validation-test splits
+
+70% Training
+
+15% Validation
+
+15% Testing
+
+This guarantees balanced, fair evaluation across institutions.
 
 🧠 System Architecture
-5 Core Phases
+Five Core Phases
 
 Data Acquisition & Local Preprocessing
 
@@ -142,26 +163,31 @@ Blockchain Anchoring & Global Model Deployment
 🔗 Blockchain Architecture
 Hierarchical Design
 
-Sidechains → manage local client interactions
+Sidechains:
+Manage client interactions, PoQ validation, and reputation scoring.
 
-Mainchain → stores encrypted Merkle roots of aggregation
+Mainchain:
+Stores cryptographic Merkle roots of aggregated global models.
 
-Smart Contract-like Routines
+Smart Contract-like Functionalities
 
 Client registration
 
-Reputation posting
-
 Update verification
 
-Reward/penalty mechanisms
+Reputation posting
 
-Benefits include:
+Penalty/reward allocation
 
-✔ Scalable
-✔ Low-latency
+Benefits
+
+✔ Highly scalable
+
+✔ Low latency
+
 ✔ Tamper-proof audit trails
-✔ Trustless operation
+
+✔ Trustless multi-party collaboration
 
 🔎 Proposed Algorithms
 Algorithm 1 — Federated Blockchain Heart Disease Prediction
@@ -170,7 +196,7 @@ Client registration
 
 Local model training
 
-PoQ validation
+Proof-of-Quality validation
 
 Bayesian reputation update
 
@@ -180,54 +206,54 @@ Blockchain anchoring
 
 Algorithm 2 — Secure Aggregation
 
-Reputation-weighted model merging
+Select Top-K reputed clients
 
-Top-K client selection
+Merge model updates using reputation-based weights
 
-Merkle-root anchoring
+Anchor Merkle root in mainchain for tamper-proof recording
 
 📈 Results
 Performance Comparison
-Method	Accuracy	Precision	Recall	F1-score
+Method	Accuracy	Precision	Recall	F1-Score
 Centralized RF	86.7%	0.87	0.85	0.86
-Federated RF (no blockchain)	84.5%	0.85	0.82	0.83
+Federated RF (No Blockchain)	84.5%	0.85	0.82	0.83
 Proposed HB-FL + Reputation	89.8%	0.90	0.88	0.89
 Highlights
 
-Proposed approach outperforms both centralized and classic FL.
+🚀 Outperforms centralized & plain FL models
 
-Strong resistance to poisoning attacks.
+🛡 Highly resistant to poisoning attacks
 
-Accuracy remains stable even when malicious clients increase.
+📉 Stable accuracy even with malicious clients
 
-Optimal reputation threshold ≈ 0.45
+🎯 Optimal reputation threshold ≈ 0.45
 
-Best performing setup uses Top-12 reputed clients
+🔝 Top-12 reputed clients give best performance
 
 🛠️ Tech Stack
 
 Python
 
-Scikit-learn
+Scikit-Learn
 
 NumPy / Pandas
 
 Matplotlib / Seaborn
 
-Blockchain Simulation Layer
+Custom Blockchain Simulation Layer
 
 Federated Learning Orchestration Engine
 
 🔮 Future Enhancements
 
-Integration with Hyperledger Fabric / Ethereum testnets
+Integration with Hyperledger Fabric / Ethereum POA chains
 
 Deployment on real healthcare IoT sensors
 
-Adding differential privacy for stronger anonymity
+Add Differential Privacy (DP) to prevent gradient leakage
 
-Support for deep neural networks in FL
+Support for deep neural networks in federated settings
 
-Optimization using adaptive learning rates
+Reinforcement Learning-based adaptive client selection
 
-Real-time federated model monitoring dashboard
+Real-time FL monitoring dashboards
